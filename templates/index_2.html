@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>This is Register Form</h1>
+    <h3>At this time your Profile will be creating as a Student!</h3>
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <h1{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h1>
+            {% endfor %}
+        </div>
+    {% endif %}
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" name="submit" value="Submit">
+        </form>
+</body>
+</html>
